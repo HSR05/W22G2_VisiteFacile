@@ -9,9 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_appicon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.VisiteFacile">
-        <activity
-            android:name=".Login_Activity"
-            android:exported="false" />
+
         <activity
             android:name=".Splash_Screen"
             android:exported="true">

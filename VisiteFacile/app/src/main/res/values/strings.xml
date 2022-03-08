@@ -11,4 +11,8 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="imgViewappLogo">App Login Logo</string>
+    <string name="editTxtPhoneNumber">Phone Number</string>
+    <string name="editTxtPassword">Password</string>
+    <string name="LoginActivityBtn">LOGIN</string>
 </resources>
