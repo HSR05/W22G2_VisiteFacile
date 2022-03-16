@@ -15,4 +15,11 @@
     <string name="editTxtPhoneNumber">Phone Number</string>
     <string name="editTxtPassword">Password</string>
     <string name="LoginActivityBtn">LOGIN</string>
+    <string name="imgViewDescRegister">Register_AppLogo</string>
+    <string name="editTxtRegisterName">NAME</string>
+    <string name="editTxtRegisterNumber">Phone Number</string>
+    <string name="editTxtRegisterPassword" />
+    <string name="editTextRegisterPassword">Password</string>
+    <string name="btnRegisterLogin">Create Account</string>
+    <string name="btnRegisterTextLogin">Create Account</string>
 </resources>
