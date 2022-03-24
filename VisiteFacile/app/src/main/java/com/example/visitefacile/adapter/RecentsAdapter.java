@@ -22,6 +22,11 @@ public class RecentsAdapter extends RecyclerView.Adapter<RecentsAdapter.RecentVi
     Context context;
     List<RecentsData> recentsDataList;
 
+    public RecentsAdapter(Context context, List<RecentsData> recentsDataList) {
+        this.context = context;
+        this.recentsDataList = recentsDataList;
+    }
+
     @NonNull
     @Override
     public RecentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -32,7 +37,10 @@ public class RecentsAdapter extends RecyclerView.Adapter<RecentsAdapter.RecentVi
 
     @Override
     public void onBindViewHolder(@NonNull RecentViewHolder holder, int position) {
-
+     holder.countryName.setText(recentsDataList.get(position).getCountryName());
+     holder.placeName.setText(recentsDataList.get(position).getPlaceName());
+     holder.price.setText(recentsDataList.get(position).getPrice());
+     holder.placeImage.setImageResource(recentsDataList.get(position).getImageUrl());
     }
 
     @Override
