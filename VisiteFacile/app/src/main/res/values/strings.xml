@@ -22,4 +22,6 @@
     <string name="editTextRegisterPassword">Password</string>
     <string name="btnRegisterLogin">Create Account</string>
     <string name="btnRegisterTextLogin">Create Account</string>
+    <string name="txtViewdesc">Bern, Switzerland</string>
+    <string name="aboutDesc">Bern is rich in culture with year-round events such as the Summer and Winter Jazz Festivals; the Buskers Festival; and the Gurtenfestival, held in mid-July. Numerous museums and theaters cover a variety of interests, and visitors can enjoy street-side sightseeing such as the Zytglogge, a medieval clock tower with moving puppets.</string>
 </resources>
