@@ -40,7 +40,6 @@ public class MainActivity2 extends AppCompatActivity {
 
         setTopPlacesRecycler(topPlacesDataList);
     }
-
     private void setRecentRecycler(List<RecentsData> recentsDataList){
 
         recentRecycler = findViewById(R.id.recent_recycler);
