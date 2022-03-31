@@ -24,4 +24,14 @@
     <string name="btnRegisterTextLogin">Create Account</string>
     <string name="txtViewdesc">Bern, Switzerland</string>
     <string name="aboutDesc">Bern is rich in culture with year-round events such as the Summer and Winter Jazz Festivals; the Buskers Festival; and the Gurtenfestival, held in mid-July. Numerous museums and theaters cover a variety of interests, and visitors can enjoy street-side sightseeing such as the Zytglogge, a medieval clock tower with moving puppets.</string>
+    <string name="txtViewLoginTitle">Login User</string>
+    <string name="LoginDesc">Travel Pic</string>
+    <string name="loginIdHint">Enter User ID</string>
+    <string name="editTxtLoginPassword">Enter Password</string>
+    <string name="txtViewWelcome">Welcome</string>
+    <string name="imgTravelDesc">Travel Pic</string>
+    <string name="editTxtUserRegister">Enter User ID</string>
+    <string name="editTxtRegisterPasswordLogin">Enter Password</string>
+    <string name="registerName">Enter Your Name</string>
+    <string name="registerbtn">Register</string>
 </resources>
