@@ -5,7 +5,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.visitefacile.Database.DestinationDatabase;
@@ -29,10 +32,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Button buttonViewCities = findViewById(R.id.buttonViewCities);
         tname = findViewById(R.id.txtViewName);
         String name = getIntent().getStringExtra("name");
         tname.setText(name);
+
+        buttonViewCities.setOnClickListener((View view) ->{
+
+        startActivity(new Intent(MainActivity.this,TopCitiesActivity.class));
+
+        });
         //Database read
         //True false
         //Database records read --> Store in list

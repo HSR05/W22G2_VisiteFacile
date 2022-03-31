@@ -60,26 +60,6 @@
                 app:layout_constraintTop_toTopOf="@+id/textViewFindYour"
                 app:srcCompat="@drawable/profile" />
 
-            <EditText
-                android:id="@+id/editTextSearchDestination"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="28dp"
-                android:background="@drawable/search_bg"
-                android:drawableLeft="@drawable/ic_search_black_24dp"
-                android:drawablePadding="16dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:paddingStart="16dp"
-                android:text="Search Destination"
-                android:textColor="#62878F"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/imageViewProfile"
-                app:layout_constraintStart_toStartOf="@+id/textViewNextDest"
-                app:layout_constraintTop_toBottomOf="@+id/imageViewProfile" />
-
             <TextView
                 android:id="@+id/txtViewName"
                 android:layout_width="wrap_content"
@@ -92,6 +72,20 @@
                 app:layout_constraintBottom_toBottomOf="@+id/textViewFindYour"
                 app:layout_constraintStart_toEndOf="@+id/textViewFindYour"
                 app:layout_constraintTop_toTopOf="@+id/textViewFindYour" />
+
+            <Button
+                android:id="@+id/buttonViewCities"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#C0CBD1"
+                android:backgroundTint="#F6F5F5"
+                android:text="@string/buttonViewCities"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.72" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -191,6 +185,7 @@
                 android:src="@drawable/hotel" />
 
         </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
