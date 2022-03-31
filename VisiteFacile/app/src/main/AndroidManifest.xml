@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VisiteFacile">
         <activity
+            android:name=".flight_booking"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity

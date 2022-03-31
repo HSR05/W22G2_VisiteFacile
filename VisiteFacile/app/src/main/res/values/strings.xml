@@ -34,4 +34,13 @@
     <string name="editTxtRegisterPasswordLogin">Enter Password</string>
     <string name="registerName">Enter Your Name</string>
     <string name="registerbtn">Register</string>
+    <string name="flight_information">Flight info</string>
+    <string name="from">"From: "</string>
+    <string name="to">To:</string>
+    <string name="deptTitle">"Departure: "</string>
+    <string name="mm_dd_yyyy">Date (mm/dd/yyyy)</string>
+    <string name="adults">"No. of adults: "</string>
+    <string name="children">"No. of children: "</string>
+    <string name="baggage">"No. of baggages: "</string>
+    <string name="confirm">"Confirm: "</string>
 </resources>
