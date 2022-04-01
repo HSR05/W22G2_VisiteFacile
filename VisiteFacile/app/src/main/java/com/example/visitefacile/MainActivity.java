@@ -1,5 +1,6 @@
 package com.example.visitefacile;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -7,9 +8,11 @@ import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.visitefacile.Database.DestinationDatabase;
 import com.example.visitefacile.adapter.Destination;
@@ -17,6 +20,8 @@ import com.example.visitefacile.adapter.RecentsAdapter;
 import com.example.visitefacile.adapter.TopPlacesAdapter;
 import com.example.visitefacile.model.RecentsData;
 import com.example.visitefacile.model.TopPlacesData;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,16 +37,45 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button buttonViewCities = findViewById(R.id.buttonViewCities);
         tname = findViewById(R.id.txtViewName);
         String name = getIntent().getStringExtra("name");
         tname.setText(name);
 
-        buttonViewCities.setOnClickListener((View view) ->{
 
-        startActivity(new Intent(MainActivity.this,TopCitiesActivity.class));
+        BottomNavigationView bottomNavigationView =(BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item)
+            {
+                switch(item.getItemId())
+                {
+                    case R.id.home:
+                        //home
+                        Toast.makeText(MainActivity.this, "Clicked on Home", Toast.LENGTH_SHORT).show();
+                        break;
 
+                    case R.id.user:
+                        //user
+                        Toast.makeText(MainActivity.this, "Clicked on user", Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.flight:
+                        //flight
+                        Toast.makeText(MainActivity.this, "Clicked on Flight", Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.hotel:
+                        //cities
+                        Toast.makeText(MainActivity.this, "Clicked on Cities", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(MainActivity.this,TopCitiesActivity.class));
+                        break;
+
+                }
+                return false;
+            }
         });
+
+
         //Database read
         //True false
         //Database records read --> Store in list

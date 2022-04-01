@@ -9,7 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
@@ -73,19 +73,6 @@
                 app:layout_constraintStart_toEndOf="@+id/textViewFindYour"
                 app:layout_constraintTop_toTopOf="@+id/textViewFindYour" />
 
-            <Button
-                android:id="@+id/buttonViewCities"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="#C0CBD1"
-                android:backgroundTint="#F6F5F5"
-                android:text="@string/buttonViewCities"
-                android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.72" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -142,49 +129,36 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintBottom_toTopOf="@+id/bottombar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
             app:layout_constraintVertical_bias="0.0" />
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
+        <RelativeLayout
+            android:id="@+id/bottombar"
             android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"
-            android:background="?attr/colorButtonNormal"
-            android:gravity="center"
-            android:orientation="horizontal"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_weight="1"
-                android:src="@drawable/home" />
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavView_Bar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#CDCBCB"
+                app:menu="@menu/bottom_navigation_menu">
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_weight="1"
-                android:src="@drawable/user2" />
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_weight="1"
-                android:src="@drawable/flight" />
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_weight="1"
-                android:src="@drawable/hotel" />
+            </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-        </LinearLayout>
+        </RelativeLayout>
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
