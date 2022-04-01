@@ -9,7 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
@@ -60,26 +60,6 @@
                 app:layout_constraintTop_toTopOf="@+id/textViewFindYour"
                 app:srcCompat="@drawable/profile" />
 
-            <EditText
-                android:id="@+id/editTextSearchDestination"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="28dp"
-                android:background="@drawable/search_bg"
-                android:drawableLeft="@drawable/ic_search_black_24dp"
-                android:drawablePadding="16dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:paddingStart="16dp"
-                android:text="Search Destination"
-                android:textColor="#62878F"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/imageViewProfile"
-                app:layout_constraintStart_toStartOf="@+id/textViewNextDest"
-                app:layout_constraintTop_toBottomOf="@+id/imageViewProfile" />
-
             <TextView
                 android:id="@+id/txtViewName"
                 android:layout_width="wrap_content"
@@ -92,6 +72,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/textViewFindYour"
                 app:layout_constraintStart_toEndOf="@+id/textViewFindYour"
                 app:layout_constraintTop_toTopOf="@+id/textViewFindYour" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -148,49 +129,37 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintBottom_toTopOf="@+id/bottombar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
             app:layout_constraintVertical_bias="0.0" />
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
+        <RelativeLayout
+            android:id="@+id/bottombar"
             android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"
-            android:background="?attr/colorButtonNormal"
-            android:gravity="center"
-            android:orientation="horizontal"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_weight="1"
-                android:src="@drawable/home" />
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavView_Bar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#CDCBCB"
+                app:menu="@menu/bottom_navigation_menu">
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_weight="1"
-                android:src="@drawable/user2" />
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_weight="1"
-                android:src="@drawable/flight" />
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_weight="1"
-                android:src="@drawable/hotel" />
+            </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-        </LinearLayout>
+        </RelativeLayout>
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

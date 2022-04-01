@@ -43,4 +43,17 @@
     <string name="children">"No. of children: "</string>
     <string name="baggage">"No. of baggages: "</string>
     <string name="confirm">"Confirm: "</string>
+    <string name="buttonViewCities">View Top Rated Cities</string>
+    <string name="cityTitleString">--Most Top Rated Cities--</string>
+    <string-array name="Cities">
+        <item>Paris</item>
+        <item>London</item>
+        <item>Dubai</item>
+        <item>Tokyo</item>
+        <item>Amsterdam</item>
+    </string-array>
+
+
+
+
 </resources>
