@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.visitefacile.Database.DestinationDao;
 import com.example.visitefacile.Database.DestinationDatabase;
 import com.example.visitefacile.adapter.Destination;
 import com.example.visitefacile.adapter.RecentsAdapter;
@@ -23,8 +24,14 @@ import com.example.visitefacile.model.TopPlacesData;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recentRecycler,topPlacesRecycler;
     RecentsAdapter recentsAdapter;
     TopPlacesAdapter topPlacesAdapter;
+    List<Destination> recentsDataList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +48,15 @@ public class MainActivity extends AppCompatActivity {
         tname = findViewById(R.id.txtViewName);
         String name = getIntent().getStringExtra("name");
         tname.setText(name);
+
+        TextView MySeeAll = findViewById(R.id.textViewSeeAll);
+
+//        MySeeAll.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(MainActivity.this, SeeAllActivity.class));
+//            }
+//        });
 
 
         BottomNavigationView bottomNavigationView =(BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
@@ -81,14 +98,25 @@ public class MainActivity extends AppCompatActivity {
         //Database records read --> Store in list
         //Object arraylist --> List<Destination>
 
-        DestinationDatabase db = Room.databaseBuilder(getApplicationContext(),
-                DestinationDatabase.class, "DestinationDatabase.db").build();
 
-        List<Destination> recentsDataList = new ArrayList<>();
-//        recentsDataList.add(new RecentsData("Alimatha Island","Maldives","From 900$",R.drawable.maldives));
-//        recentsDataList.add(new RecentsData("Taj Mahal","India","From 700$",R.drawable.india));
-//        recentsDataList.add(new RecentsData("Rincón de la Vieja","Costa Rica","From 600$",R.drawable.costarica));
-//        recentsDataList.add(new RecentsData("Sugar Loaf","Brazil","From 800$",R.drawable.brazil));
+
+        recentsDataList = ReadAuctionCSV();
+
+
+        DestinationDatabase myDb  = Room.databaseBuilder(getApplicationContext(), DestinationDatabase.class, "destinations.db").build();
+
+        DestinationDao destinationDao = myDb.destinationDao();
+
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+
+        executorService.execute(new Runnable() {
+            @Override
+            public void run() {
+                //destinationDao.GetAllDestinationData();
+                destinationDao.insertDestination(recentsDataList);
+            }
+        });
+
 
         /*ExecutorService executorService = Executors.newSingleThreadExecutor();
         executorService.execute(new Runnable() {
@@ -98,18 +126,26 @@ public class MainActivity extends AppCompatActivity {
                 //db.DestinationDao().UpdateNumOfTickets(recentsDataList.get(i).getDestinationName());
             }
         }); */
-        //setRecentRecycler(recentsDataList);
+        setRecentRecycler(recentsDataList);
 
         List<Destination> topPlacesDataList = new ArrayList<>();
+        for(int i=0; i<recentsDataList.size(); i++){
+            if(recentsDataList.get(i).isDestinationStatus()==true){
+                topPlacesDataList.add(recentsDataList.get(i));
+            }
+        }
+
 //        topPlacesDataList.add(new TopPlacesData("Bern","Switzerland","$2200 - $3500",R.drawable.bern));
 //        topPlacesDataList.add(new TopPlacesData("Stanley Park","Canada","$400 - $900",R.drawable.stanleypark));
 //        topPlacesDataList.add(new TopPlacesData("Taj Mahal","India","$900 - $1200",R.drawable.india));
 //        topPlacesDataList.add(new TopPlacesData("Rincón de la Vieja","Costa Rica","$1600 - $2100",R.drawable.costarica));
 
-        //setTopPlacesRecycler(topPlacesDataList);
+        setTopPlacesRecycler(topPlacesDataList);
     }
 
-    private void setRecentRecycler(List<RecentsData> recentsDataList){
+
+
+    private void setRecentRecycler(List<Destination> recentsDataList){
 
         recentRecycler = findViewById(R.id.recent_recycler);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
@@ -119,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setTopPlacesRecycler(List<TopPlacesData> topPlacesDataList){
+    private void setTopPlacesRecycler(List<Destination> topPlacesDataList){
 
         topPlacesRecycler = findViewById(R.id.top_places_recycler);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this,RecyclerView.VERTICAL,false);
@@ -128,5 +164,58 @@ public class MainActivity extends AppCompatActivity {
         topPlacesRecycler.setAdapter(topPlacesAdapter);
 
     }
+
+    private List<Destination> ReadAuctionCSV(){
+
+        List<Destination> DestinationList = new ArrayList<>();
+
+
+
+        InputStream inputStream = getResources().openRawResource(R.raw.destination);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+
+
+        try{
+            String csvDestinationLine = reader.readLine(); //Reading out the header
+
+            while((csvDestinationLine=reader.readLine())!=null){
+                String[] eachDestinationLine = csvDestinationLine.split(",");
+                String destinationPicName = eachDestinationLine[2];
+                int destinationDrawable =getResources().getIdentifier(destinationPicName, "drawable", getPackageName());
+
+                double destPrice = Double.parseDouble(eachDestinationLine[6]);
+
+                boolean topDestStatus;
+
+                //Keeping the fact that if it is not no, it is going to be yes
+                if(eachDestinationLine[4].equals("no")){
+                    topDestStatus = false;
+                } else{
+                    topDestStatus = true;
+                }
+
+                //Creating the object here
+                Destination eachDestination = new Destination(eachDestinationLine[0],eachDestinationLine[1],destinationDrawable,eachDestinationLine[3], destPrice,topDestStatus);
+
+                DestinationList.add(eachDestination);
+            }
+
+
+        }catch (IOException ex){
+            throw new RuntimeException("Error Reading the csv file: "+ex);
+        } finally {
+            try{
+                inputStream.close();
+            } catch (IOException ex){
+                throw new RuntimeException("Error closing the csv file");
+            }
+        }
+
+
+
+        return DestinationList;
+    }
+
+
 
 }
