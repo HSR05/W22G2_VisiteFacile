@@ -2,6 +2,7 @@ package com.example.visitefacile.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,9 +23,9 @@ import java.util.List;
 
 public class RecentsAdapter extends RecyclerView.Adapter<RecentsAdapter.RecentViewHolder> {
     Context context;
-    List<RecentsData> recentsDataList;
+    List<Destination> recentsDataList;
 
-    public RecentsAdapter(Context context, List<RecentsData> recentsDataList) {
+    public RecentsAdapter(Context context, List<Destination> recentsDataList) {
         this.context = context;
         this.recentsDataList = recentsDataList;
     }
@@ -39,16 +40,19 @@ public class RecentsAdapter extends RecyclerView.Adapter<RecentsAdapter.RecentVi
 
     @Override
     public void onBindViewHolder(@NonNull RecentViewHolder holder, int position) {
-     holder.countryName.setText(recentsDataList.get(position).getCountryName());
-     holder.placeName.setText(recentsDataList.get(position).getPlaceName());
-     holder.price.setText(recentsDataList.get(position).getPrice());
-     holder.placeImage.setImageResource(recentsDataList.get(position).getImageUrl());
+     holder.countryName.setText(recentsDataList.get(position).getDestinationCountryName());
+     holder.placeName.setText(recentsDataList.get(position).getDestinationName());
+     holder.price.setText(Double.toString(recentsDataList.get(position).getDestinationTicketPrice()));
+     holder.placeImage.setImageResource(recentsDataList.get(position).getDestinationPic());
 
      holder.itemView.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View view) {
              Intent i = new Intent(context, DetailsActivity.class);
-             context.startActivity(i);
+             Bundle myBundle = new Bundle();
+
+
+             context.startActivity(i.putExtra("DBINDEX", holder.getAdapterPosition()));
          }
      });
 

@@ -5,13 +5,16 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "Destination")
+@Entity(tableName = "mydestination")
 public class Destination {
 
     @NonNull
     @PrimaryKey
     @ColumnInfo(name="destinationname")
     private String DestinationName;
+
+    @ColumnInfo(name="destinationcountry")
+    private String DestinationCountryName;
 
     @ColumnInfo(name="destinationpic")
     private int DestinationPic;
@@ -32,12 +35,14 @@ public class Destination {
 
     }
 
-    public Destination(@NonNull String destinationName, int destinationPic, String travelDate, double destinationTicketPrice, boolean destinationStatus, double destinationPrice) {
+    public Destination(@NonNull String destinationName, String destinationCountryName, int destinationPic, String travelDate, double destinationTicketPrice, boolean destinationStatus) {
         DestinationName = destinationName;
+        DestinationCountryName = destinationCountryName;
         DestinationPic = destinationPic;
         TravelDate = travelDate;
         DestinationTicketPrice = destinationTicketPrice;
         DestinationStatus = destinationStatus;
+        double destinationPrice = 0;
         DestinationPrice = destinationPrice;
     }
 
@@ -48,6 +53,14 @@ public class Destination {
 
     public void setDestinationName(@NonNull String destinationName) {
         DestinationName = destinationName;
+    }
+
+    public String getDestinationCountryName() {
+        return DestinationCountryName;
+    }
+
+    public void setDestinationCountryName(String destinationCountryName) {
+        DestinationCountryName = destinationCountryName;
     }
 
     public int getDestinationPic() {

@@ -18,9 +18,9 @@ import java.util.List;
 
 public class TopPlacesAdapter extends RecyclerView.Adapter<TopPlacesAdapter.TopPlacesHolder> {
     Context context;
-    List<TopPlacesData> topPlacesDataList;
+    List<Destination> topPlacesDataList;
 
-    public TopPlacesAdapter(Context context, List<TopPlacesData> topPlacesDataList) {
+    public TopPlacesAdapter(Context context, List<Destination> topPlacesDataList) {
         this.context = context;
         this.topPlacesDataList = topPlacesDataList;
     }
@@ -35,10 +35,10 @@ public class TopPlacesAdapter extends RecyclerView.Adapter<TopPlacesAdapter.TopP
 
     @Override
     public void onBindViewHolder(@NonNull TopPlacesHolder holder, int position) {
-     holder.countryName.setText(topPlacesDataList.get(position).getCountryName());
-     holder.placeName.setText(topPlacesDataList.get(position).getPlaceName());
-     holder.price.setText(topPlacesDataList.get(position).getPrice());
-     holder.placeImage.setImageResource(topPlacesDataList.get(position).getImageUrl());
+     holder.countryName.setText(topPlacesDataList.get(position).getDestinationCountryName());
+     holder.placeName.setText(topPlacesDataList.get(position).getDestinationName());
+     holder.price.setText(Double.toString(topPlacesDataList.get(position).getDestinationTicketPrice()));
+     holder.placeImage.setImageResource(topPlacesDataList.get(position).getDestinationPic());
     }
 
     @Override
