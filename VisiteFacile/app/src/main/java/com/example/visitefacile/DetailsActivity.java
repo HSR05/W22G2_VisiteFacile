@@ -34,7 +34,7 @@ public class DetailsActivity extends AppCompatActivity {
         ImageView myBackImage = findViewById(R.id.imageView3);
 
 
-        int MyRecord = getIntent().getIntExtra("DBINDEX", 0);
+        String MyRecord = getIntent().getStringExtra("DBINDEX");
         final Destination[] myDestination = {new Destination()};
 
         myBackImage.setOnClickListener(new View.OnClickListener() {
@@ -53,10 +53,10 @@ public class DetailsActivity extends AppCompatActivity {
         executorService.execute(new Runnable() {
             @Override
             public void run() {
-                myDestinationList = destinationDao.GetAllDestinationData();
-                //myDest =  destinationDao.GetSelectedDestinationData("India");
+                //myDestinationList = destinationDao.GetAllDestinationData();
+                myDest =  destinationDao.GetSelectedDestinationData(MyRecord);
 
-                myDest = myDestinationList.get(MyRecord);
+                //myDest = myDestinationList.get(MyRecord);
                 myDestImage.setImageResource(myDest.getDestinationPic());
                 myCityName.setText(myDest.getDestinationName());
                 myPrice.setText(Double.toString(myDest.getDestinationTicketPrice()));

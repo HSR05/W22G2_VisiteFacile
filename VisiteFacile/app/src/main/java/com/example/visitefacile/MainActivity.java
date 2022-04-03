@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        recentsDataList = ReadAuctionCSV();
+        recentsDataList = ReadDestinationCSV();
 
 
         DestinationDatabase myDb  = Room.databaseBuilder(getApplicationContext(), DestinationDatabase.class, "destinations.db").build();
@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private List<Destination> ReadAuctionCSV(){
+    private List<Destination> ReadDestinationCSV(){
 
         List<Destination> DestinationList = new ArrayList<>();
 
@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
                 boolean topDestStatus;
 
                 //Keeping the fact that if it is not no, it is going to be yes
-                if(eachDestinationLine[4].equals("no")){
+                if(eachDestinationLine[5].equals("no")){
                     topDestStatus = false;
                 } else{
                     topDestStatus = true;

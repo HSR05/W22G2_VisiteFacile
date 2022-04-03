@@ -1,6 +1,8 @@
 package com.example.visitefacile.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.visitefacile.DetailsActivity;
 import com.example.visitefacile.R;
 import com.example.visitefacile.model.RecentsData;
 import com.example.visitefacile.model.TopPlacesData;
@@ -39,6 +42,17 @@ public class TopPlacesAdapter extends RecyclerView.Adapter<TopPlacesAdapter.TopP
      holder.placeName.setText(topPlacesDataList.get(position).getDestinationName());
      holder.price.setText(Double.toString(topPlacesDataList.get(position).getDestinationTicketPrice()));
      holder.placeImage.setImageResource(topPlacesDataList.get(position).getDestinationPic());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context, DetailsActivity.class);
+                Bundle myBundle = new Bundle();
+
+
+                context.startActivity(i.putExtra("DBINDEX", topPlacesDataList.get(holder.getAdapterPosition()).getDestinationName()));
+            }
+        });
     }
 
     @Override

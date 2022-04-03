@@ -45,6 +45,7 @@ public class RecentsAdapter extends RecyclerView.Adapter<RecentsAdapter.RecentVi
      holder.price.setText(Double.toString(recentsDataList.get(position).getDestinationTicketPrice()));
      holder.placeImage.setImageResource(recentsDataList.get(position).getDestinationPic());
 
+
      holder.itemView.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View view) {
@@ -52,7 +53,7 @@ public class RecentsAdapter extends RecyclerView.Adapter<RecentsAdapter.RecentVi
              Bundle myBundle = new Bundle();
 
 
-             context.startActivity(i.putExtra("DBINDEX", holder.getAdapterPosition()));
+             context.startActivity(i.putExtra("DBINDEX", recentsDataList.get(holder.getAdapterPosition()).getDestinationName()));
          }
      });
 
@@ -68,13 +69,13 @@ public class RecentsAdapter extends RecyclerView.Adapter<RecentsAdapter.RecentVi
 
         ImageView placeImage;
         TextView placeName, countryName, price;
+
         public RecentViewHolder(@NonNull View itemView) {
             super(itemView);
             placeImage = itemView.findViewById(R.id.place_image);
             placeName = itemView.findViewById(R.id.place_name);
             countryName = itemView.findViewById(R.id.country_name);
             price = itemView.findViewById(R.id.price);
-
 
 
         }

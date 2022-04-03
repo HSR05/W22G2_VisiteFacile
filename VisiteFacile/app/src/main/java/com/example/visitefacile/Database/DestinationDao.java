@@ -17,7 +17,7 @@ public interface DestinationDao {
     @Query("SELECT * FROM mydestination")
     List<Destination> GetAllDestinationData();
 
-    @Query("SELECT * FROM mydestination WHERE destinationcountry=:myDest")
+    @Query("SELECT * FROM mydestination WHERE destinationname=:myDest")
     Destination GetSelectedDestinationData(String myDest);
 
 
