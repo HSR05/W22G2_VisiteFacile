@@ -22,7 +22,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class DetailsActivity extends AppCompatActivity {
-    List<Destination> myDestinationList  = new ArrayList<Destination>();
+
     Destination myDest = new Destination();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
