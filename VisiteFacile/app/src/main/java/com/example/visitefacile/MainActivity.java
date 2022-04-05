@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Clicked on Flight", Toast.LENGTH_SHORT).show();
                         break;
 
-                    case R.id.hotel:
+                    case R.id.cities:
                         //cities
                         Toast.makeText(MainActivity.this, "Clicked on Cities", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(MainActivity.this,TopCitiesActivity.class));
