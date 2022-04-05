@@ -10,8 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VisiteFacile">
         <activity
-            android:name=".FavActivity"
-            android:exported="false" />
+            android:name=".Ticket_QR"
+            android:exported="false" >
+
+        </activity>
         <activity
             android:name=".TopCitiesActivity"
             android:exported="false" />
@@ -32,6 +34,11 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:exported="false">
+
+        </activity>
+        <activity
+            android:name=".Splash_Screen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,9 +46,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Splash_Screen"
-            android:exported="true"></activity>
 
         <meta-data
             android:name="preloaded_fonts"

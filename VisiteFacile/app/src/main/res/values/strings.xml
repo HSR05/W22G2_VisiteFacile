@@ -45,6 +45,9 @@
     <string name="confirm">"Confirm: "</string>
     <string name="buttonViewCities">View Top Rated Cities</string>
     <string name="cityTitleString">--Most Top Rated Cities--</string>
+    <string name="qr_code">Qr Code</string>
+    <string name="enter_your_info">Details of your ticket</string>
+    <string name="generate_qr_code">Generate QR code for ticket</string>
     <string-array name="Cities">
         <item>Paris</item>
         <item>London</item>
