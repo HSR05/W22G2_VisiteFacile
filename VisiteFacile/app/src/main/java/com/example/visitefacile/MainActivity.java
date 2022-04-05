@@ -73,7 +73,8 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.user:
                         //user
-                        Toast.makeText(MainActivity.this, "Clicked on user", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Clicked on Favorites", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(MainActivity.this,FavActivity.class));
                         break;
 
                     case R.id.flight:

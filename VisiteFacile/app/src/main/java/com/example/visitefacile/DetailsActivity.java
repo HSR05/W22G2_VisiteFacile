@@ -32,6 +32,7 @@ public class DetailsActivity extends AppCompatActivity {
         TextView myCityName = findViewById(R.id.txtViewCityName);
         TextView myPrice = findViewById(R.id.txtViewPrice);
         ImageView myBackImage = findViewById(R.id.imageView3);
+        ImageView imageViewHeart = findViewById(R.id.imgViewFav);
 
 
         String MyRecord = getIntent().getStringExtra("DBINDEX");
@@ -41,6 +42,14 @@ public class DetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(DetailsActivity.this, MainActivity.class));
+            }
+        });
+
+        imageViewHeart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DetailsActivity.this, FavActivity.class));
+                //startActivity(new Intent(DetailsActivity.this, FavActivity.class));
             }
         });
 

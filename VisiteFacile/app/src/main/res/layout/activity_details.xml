@@ -21,14 +21,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bg" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="71dp"
-        android:clickable="true"
-        android:layout_height="33dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="71dp"
+            android:layout_height="33dp"
+            android:clickable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+            tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/txtViewCityName"
@@ -156,7 +157,7 @@
         app:srcCompat="@drawable/einsteinmuseum" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/imgViewFav"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -173,10 +174,10 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/rubik_light"
         android:text="Start Booking Your Trip"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+        app:layout_constraintBottom_toBottomOf="@+id/imgViewFav"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView9"
-        app:layout_constraintTop_toTopOf="@+id/imageView9" />
+        app:layout_constraintStart_toEndOf="@+id/imgViewFav"
+        app:layout_constraintTop_toTopOf="@+id/imgViewFav" />
 
     <TextView
         android:id="@+id/textView9"
