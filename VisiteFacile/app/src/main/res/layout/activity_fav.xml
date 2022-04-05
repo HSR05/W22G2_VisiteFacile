@@ -9,12 +9,13 @@
     android:padding="16dp"
     tools:context=".FavActivity">
 
-
     <ImageView
         android:id="@+id/imageViewback"
-        android:layout_width="51dp"
+        android:layout_width="71dp"
         android:layout_height="30dp"
+        android:layout_marginLeft="0dp"
         app:srcCompat="@drawable/ic_backarrow" />
+
 
     <EditText
         android:id="@+id/edit_text"

@@ -10,11 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VisiteFacile">
         <activity
-            android:name=".Ticket_QR"
-            android:exported="false" >
-
-        </activity>
-        <activity
             android:name=".TopCitiesActivity"
             android:exported="false" />
         <activity
@@ -31,6 +26,9 @@
             android:exported="false" />
         <activity
             android:name=".DetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FavActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
