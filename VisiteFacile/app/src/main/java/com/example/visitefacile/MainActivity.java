@@ -77,9 +77,10 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(MainActivity.this,FavActivity.class));
                         break;
 
-                    case R.id.flight:
-                        //flight
-                        Toast.makeText(MainActivity.this, "Clicked on Flight", Toast.LENGTH_SHORT).show();
+                    case R.id.rating:
+                        //raing
+                        Toast.makeText(MainActivity.this, "Clicked on Rating", Toast.LENGTH_SHORT).show();
+                       startActivity(new Intent(MainActivity.this,RatingActivity.class));
                         break;
 
                     case R.id.cities:

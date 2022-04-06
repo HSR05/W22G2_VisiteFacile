@@ -9,9 +9,9 @@
         android:icon="@drawable/ic_baseline_favorite_24"
         android:title="User" />
     <item
-        android:id="@+id/flight"
-        android:icon="@drawable/ic_baseline_flight_24"
-        android:title="Flight" />
+        android:id="@+id/rating"
+        android:icon="@drawable/ic_baseline_star_24"
+        android:title="Rating" />
     <item
         android:id="@+id/cities"
         android:icon="@drawable/ic_baseline_location_city_24"

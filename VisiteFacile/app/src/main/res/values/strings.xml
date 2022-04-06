@@ -56,6 +56,10 @@
         <item>Amsterdam</item>
     </string-array>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="ratingdescription">Ratings</string>
+    <string name="submitRating">Submit Your Rating</string>
+    <string name="thankyou">We Appreciate Your Feedback</string>
+    <string name="appinfo">Your Guide To Tour Easy!</string>
 
 
 </resources>

@@ -100,7 +100,11 @@ public class TopCitiesActivity extends AppCompatActivity
                         Toast.makeText(TopCitiesActivity.this, "Clicked on Favorites", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(TopCitiesActivity.this,FavActivity.class));
                         break;
-
+                    case R.id.rating:
+                        //raing
+                        Toast.makeText(TopCitiesActivity.this, "Clicked on Rating", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(TopCitiesActivity.this,RatingActivity.class));
+                        break;
                 }
                 return false;
             }

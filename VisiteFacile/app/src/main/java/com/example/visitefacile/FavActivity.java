@@ -108,6 +108,11 @@ public class FavActivity extends AppCompatActivity  {
                         Toast.makeText(FavActivity.this, "Clicked on Favorites", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(FavActivity.this,TopCitiesActivity.class));
                         break;
+                    case R.id.rating:
+                        //raing
+                        Toast.makeText(FavActivity.this, "Clicked on Rating", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(FavActivity.this,RatingActivity.class));
+                        break;
 
                 }
                 return false;
