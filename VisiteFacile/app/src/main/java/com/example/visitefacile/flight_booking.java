@@ -5,7 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
+
+import com.example.visitefacile.databinding.ActivityFlightBookingBinding;
 
 import java.util.Calendar;
 
@@ -18,9 +24,30 @@ public class flight_booking extends AppCompatActivity {
         final DatePickerDialog[] datePickerDialog = new DatePickerDialog[1];
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_flight_booking);
+        //setContentView(R.layout.activity_flight_booking);
 
-        date = (EditText) findViewById(R.id.deptDate);
+        ActivityFlightBookingBinding binding = ActivityFlightBookingBinding.inflate(getLayoutInflater());
+
+        setContentView(binding.getRoot());
+
+        Button btnConfirm = binding.btnConfirm;
+        EditText edtTextFrom = binding.editTxtFrom;
+        EditText edtTextTo = binding.editTxtTo;
+        EditText edtNumBags = binding.editTxtNumBags;
+        Spinner spinnerAdult = binding.spinnerAdult;
+        Spinner spinnerchild = binding.spinnerChild;
+
+        btnConfirm.setOnClickListener((View view) -> {
+
+            if(edtTextFrom.getText().toString().isEmpty()){
+                Toast.makeText(this, "Kindly fill departing place", Toast.LENGTH_SHORT).show();
+            }
+
+
+
+        });
+
+        date = (EditText) findViewById(R.id.datePickerDept);
         // perform click event on edit text
         date.setOnClickListener(new View.OnClickListener() {
             @Override
