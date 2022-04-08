@@ -6,6 +6,7 @@ import androidx.room.Room;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -35,9 +36,17 @@ public class DetailsActivity extends AppCompatActivity {
         ImageView imageViewHeart = findViewById(R.id.imgViewFav);
 
 
+
         String MyRecord = getIntent().getStringExtra("DBINDEX");
         final Destination[] myDestination = {new Destination()};
 
+
+        Button btnBooking = findViewById(R.id.btn_booking);
+
+        btnBooking.setOnClickListener((View view) -> {
+            startActivity(new Intent(DetailsActivity.this,flight_booking.class));
+
+        });
         myBackImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
