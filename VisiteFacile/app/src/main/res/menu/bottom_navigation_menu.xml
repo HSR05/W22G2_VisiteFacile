@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home" />
+    <item
+        android:id="@+id/user"
+        android:icon="@drawable/ic_baseline_favorite_24"
+        android:title="User" />
+    <item
+        android:id="@+id/rating"
+        android:icon="@drawable/ic_baseline_star_24"
+        android:title="Rating" />
+    <item
+        android:id="@+id/cities"
+        android:icon="@drawable/ic_baseline_location_city_24"
+        android:title="Cities">
+
+    </item>
+
+</menu>

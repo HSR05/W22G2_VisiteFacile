@@ -22,4 +22,56 @@
     <string name="editTextRegisterPassword">Password</string>
     <string name="btnRegisterLogin">Create Account</string>
     <string name="btnRegisterTextLogin">Create Account</string>
+    <string name="txtViewdesc">Bern, Switzerland</string>
+    <string name="aboutDesc">Bern is rich in culture with year-round events such as the Summer and Winter Jazz Festivals; the Buskers Festival; and the Gurtenfestival, held in mid-July. Numerous museums and theaters cover a variety of interests, and visitors can enjoy street-side sightseeing such as the Zytglogge, a medieval clock tower with moving puppets.</string>
+    <string name="txtViewLoginTitle">Login User</string>
+    <string name="LoginDesc">Travel Pic</string>
+    <string name="loginIdHint">Enter User ID</string>
+    <string name="editTxtLoginPassword">Enter Password</string>
+    <string name="txtViewWelcome">Welcome</string>
+    <string name="imgTravelDesc">Travel Pic</string>
+    <string name="editTxtUserRegister">Enter User ID</string>
+    <string name="editTxtRegisterPasswordLogin">Enter Password</string>
+    <string name="registerName">Enter Your Name</string>
+    <string name="registerbtn">Register</string>
+    <string name="flight_information">Flight info</string>
+    <string name="from">"From: "</string>
+    <string name="to">To:</string>
+    <string name="deptTitle">"Departure: "</string>
+    <string name="mm_dd_yyyy">Date (mm/dd/yyyy)</string>
+    <string name="adults">"No. of adults: "</string>
+    <string name="children">"No. of children: "</string>
+    <string name="baggage">"No. of baggages: "</string>
+    <string name="confirm">"Confirm: "</string>
+    <string name="buttonViewCities">View Top Rated Cities</string>
+    <string name="cityTitleString">--Most Top Rated Cities--</string>
+    <string name="qr_code">Qr Code</string>
+    <string name="enter_your_info">Details of your ticket</string>
+    <string name="generate_qr_code">Generate QR code for ticket</string>
+    <string-array name="Cities">
+        <item>Paris</item>
+        <item>London</item>
+        <item>Dubai</item>
+        <item>Tokyo</item>
+        <item>Amsterdam</item>
+    </string-array>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="ratingdescription">Ratings</string>
+    <string name="submitRating">Submit Your Rating</string>
+    <string name="thankyou">We Appreciate Your Feedback</string>
+    <string name="appinfo">Your Guide To Tour Easy!</string>
+    <string-array name="adult_spinner">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+
+
+
 </resources>

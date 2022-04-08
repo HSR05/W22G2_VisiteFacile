@@ -1,0 +1,10 @@
+DestinationName,DestinationCountryName,DestinationPic,TravelDate,DestinationTicketPrice,DestinationStatus,DestinationPrice
+Taj Mahal,India,india,12-16-2022,1650.99,no,4000
+Alimatha Island,Maldives,maldives,12-18-2022,720.99,no,3000
+Paris,France,paris,12-31-2022,1550.99,yes,4500
+Rincón de la Vieja,Costa Rica,costarica,12-20-2022,840.99,yes,2900
+Sugar Loaf,Brazil,brazil,12-26-2022,1120.99,no,2100
+Stanley Park,Canada,stanleypark,12-31-2022,1050.99,yes,3100
+Amsterdam,Netherlands,amsterdam,12-31-2022,1650.99,no,2100
+Tokyo,Japan,tokyo,12-31-2022,1250.99,yes,2600
+Dubai,UAE,dubai,12-31-2022,1350.99,yes,3500
