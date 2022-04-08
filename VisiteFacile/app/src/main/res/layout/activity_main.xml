@@ -16,7 +16,7 @@
             android:layout_width="0dp"
             android:layout_height="220dp"
             android:layout_marginBottom="551dp"
-            android:background="@drawable/home_bg"
+            android:background="@drawable/backgroundcities"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -32,7 +32,7 @@
                 android:layout_marginTop="24dp"
                 android:fontFamily="sans-serif-light"
                 android:text="@string/txtViewWelcome"
-                android:textColor="#FFFFFF"
+                android:textColor="#142177"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -43,22 +43,22 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="sans-serif-medium"
-                android:text="Next Destination"
-                android:textColor="#FFFFFF"
+                android:text="@string/appinfo"
+                android:textColor="#0D185A"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="@+id/textViewFindYour"
                 app:layout_constraintTop_toBottomOf="@+id/textViewFindYour" />
 
             <ImageView
                 android:id="@+id/imageViewProfile"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:layout_marginEnd="16dp"
                 android:contentDescription="Image View profile"
                 app:layout_constraintBottom_toBottomOf="@+id/textViewNextDest"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textViewFindYour"
-                app:srcCompat="@drawable/profile" />
+                app:srcCompat="@drawable/app_icon" />
 
             <TextView
                 android:id="@+id/txtViewName"
@@ -66,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/roboto_bold"
-                android:textColor="@color/white"
+                android:textColor="@color/purple_700"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/textViewFindYour"

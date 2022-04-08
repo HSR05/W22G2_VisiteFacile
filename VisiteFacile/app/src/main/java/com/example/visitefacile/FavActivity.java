@@ -1,19 +1,24 @@
 package com.example.visitefacile;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.visitefacile.Database.RoomDb;
 import com.example.visitefacile.adapter.MainAdapter;
 import com.example.visitefacile.model.MainData;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,10 +37,10 @@ public class FavActivity extends AppCompatActivity  {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fav);
-
         editText = findViewById(R.id.edit_text);
         btAdd = findViewById(R.id.bt_add);
         btReset = findViewById(R.id.bt_reset);
@@ -52,7 +57,6 @@ public class FavActivity extends AppCompatActivity  {
         adapter = new MainAdapter(dataList, FavActivity.this);
 
         recyclerView.setAdapter(adapter);
-
         btAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -86,6 +90,35 @@ public class FavActivity extends AppCompatActivity  {
                 adapter.notifyDataSetChanged();
             }
         });
+        BottomNavigationView bottomNavigationView =(BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item)
+            {
+                switch(item.getItemId())
+                {
+                    case R.id.home:
+                        //home
+                        Toast.makeText(FavActivity.this, "Clicked on Home", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(FavActivity.this,MainActivity.class));
+                        break;
+
+                    case R.id.cities:
+                        //user
+                        Toast.makeText(FavActivity.this, "Clicked on Favorites", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(FavActivity.this,TopCitiesActivity.class));
+                        break;
+                    case R.id.rating:
+                        //raing
+                        Toast.makeText(FavActivity.this, "Clicked on Rating", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(FavActivity.this,RatingActivity.class));
+                        break;
+
+                }
+                return false;
+            }
+        });
+
 
 
     }

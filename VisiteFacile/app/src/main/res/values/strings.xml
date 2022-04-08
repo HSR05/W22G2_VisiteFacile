@@ -55,6 +55,11 @@
         <item>Tokyo</item>
         <item>Amsterdam</item>
     </string-array>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="ratingdescription">Ratings</string>
+    <string name="submitRating">Submit Your Rating</string>
+    <string name="thankyou">We Appreciate Your Feedback</string>
+    <string name="appinfo">Your Guide To Tour Easy!</string>
     <string-array name="adult_spinner">
         <item>1</item>
         <item>2</item>
@@ -66,6 +71,7 @@
         <item>8</item>
         <item>9</item>
     </string-array>
+
 
 
 </resources>
