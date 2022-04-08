@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VisiteFacile">
         <activity
+
             android:name=".PopActivity"
             android:exported="false"
 
@@ -36,6 +37,10 @@
             android:exported="false"
             android:label="@string/title_activity_maps" />
         -->
+          <activity
+            android:name=".Ticket_QR"
+            android:exported="false" />
+
         <activity
             android:name=".TopCitiesActivity"
             android:exported="false" />
@@ -59,7 +64,8 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:exported="false"></activity>
+
         <activity
             android:name=".Splash_Screen"
             android:exported="true">
