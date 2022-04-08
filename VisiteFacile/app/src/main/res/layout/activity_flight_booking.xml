@@ -52,8 +52,8 @@
                 android:textSize="24sp" />
 
 
-            <AutoCompleteTextView
-                android:id="@+id/fromForm"
+            <EditText
+                android:id="@+id/editTxtFrom"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
@@ -89,8 +89,8 @@
                 android:textSize="24sp" />
 
 
-            <AutoCompleteTextView
-                android:id="@+id/toForm"
+            <EditText
+                android:id="@+id/editTxtTo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
@@ -125,7 +125,7 @@
                 android:textSize="24sp" />
 
             <EditText
-                android:id="@+id/deptDate"
+                android:id="@+id/datePickerDept"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
@@ -151,7 +151,7 @@
 
             <TextView
                 android:id="@+id/adultText"
-                android:layout_width="0dp"
+                android:layout_width="106dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.50"
                 android:gravity="center_horizontal"
@@ -159,20 +159,20 @@
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textSize="20sp" />
 
-            <EditText
-                android:id="@+id/numAdults"
+            <Spinner
+                android:id="@+id/spinnerAdult"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
+                android:entries="@array/adult_spinner"
                 android:gravity="left|center_horizontal"
-                android:hint="eg. 1"
                 android:inputType="number"
                 android:maxLines="1"
-                android:maxLength="3"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                tools:ignore="RtlHardcoded" />
 
         </LinearLayout>
 
@@ -185,7 +185,7 @@
 
             <TextView
                 android:id="@+id/childText"
-                android:layout_width="0dp"
+                android:layout_width="16dp"
                 android:layout_height="62dp"
                 android:layout_weight="0.50"
                 android:gravity="center_horizontal"
@@ -193,20 +193,20 @@
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textSize="20sp" />
 
-            <EditText
-                android:id="@+id/numChildren"
+            <Spinner
+                android:id="@+id/spinnerChild"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_marginRight="10dp"
-                android:layout_weight="1"
+                android:layout_weight="0.50"
+                android:entries="@array/adult_spinner"
                 android:gravity="left|center_horizontal"
-                android:hint="eg. 0"
                 android:inputType="number"
+                android:maxLines="1"
                 android:textAlignment="center"
-                android:maxLength="3"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textSize="24sp"
-                tools:ignore="HardcodedText" />
+                tools:ignore="RtlHardcoded" />
 
         </LinearLayout>
 
@@ -228,7 +228,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/numBags"
+                android:id="@+id/editTxtNumBags"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
@@ -244,32 +244,11 @@
 
         </LinearLayout>
 
-        <LinearLayout
+        <Button
+            android:id="@+id/btnConfirm"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/FlightConfirm"
-                android:layout_width="wrap_content"
-                android:layout_height="79dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="110dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1.05"
-                android:background="@color/white"
-                android:fontFamily="sans-serif"
-                android:onClick="confirmOnClick"
-                android:text="@string/confirm"
-                android:textAppearance="@style/TextAppearance.AppCompat"
-                android:textColor="?attr/actionMenuTextColor"
-                android:textSize="24sp"
-                android:textStyle="normal|bold"
-                tools:targetApi="jelly_bean" />
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            android:text="Confirm" />
 
     </LinearLayout>
 
