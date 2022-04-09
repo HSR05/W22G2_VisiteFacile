@@ -2,8 +2,10 @@ package com.example.visitefacile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
@@ -12,6 +14,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.visitefacile.Database.FlightDao;
+import com.example.visitefacile.Database.FlightDatabase;
+import com.example.visitefacile.Database.UserDao;
+import com.example.visitefacile.Database.UserDatabase;
+import com.example.visitefacile.adapter.FlightEntity;
+import com.example.visitefacile.adapter.UserEntity;
 import com.example.visitefacile.databinding.ActivityFlightBookingBinding;
 
 import java.util.Calendar;
@@ -21,6 +29,7 @@ public class flight_booking extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        FlightEntity flightEntity = new FlightEntity();
         EditText date;
         final DatePickerDialog[] datePickerDialog = new DatePickerDialog[1];
 
@@ -40,24 +49,57 @@ public class flight_booking extends AppCompatActivity {
 
         btnConfirm.setOnClickListener((View view) -> {
 
-            if(edtTextFrom.getText().toString().isEmpty()){
+            if (edtTextFrom.getText().toString().isEmpty()) {
                 Toast.makeText(this, "Kindly fill departing place", Toast.LENGTH_SHORT).show();
+            } else if (edtTextTo.getText().toString().isEmpty()) {
+                Toast.makeText(this, "Kindly fill Destination place", Toast.LENGTH_SHORT).show();
+            } else if (edtNumBags.getText().toString().isEmpty()) {
+                Toast.makeText(this, "Kindly fill number of bags", Toast.LENGTH_SHORT).show();
+            } else if (edtNumBags.getText().toString().isEmpty()) {
+                Toast.makeText(this, "Kindly fill number of bags", Toast.LENGTH_SHORT).show();
+            } else {
+
+                Bundle bundle = new Bundle();
+                bundle.putString("from", edtTextFrom.getText().toString());
+                bundle.putString("to", edtTextTo.getText().toString());
+                bundle.putString("bags", edtNumBags.getText().toString());
+                bundle.putString("adults", spinnerAdult.getSelectedItem().toString());
+                bundle.putString("children", spinnerchild.getSelectedItem().toString());
+
+                double price = (Integer.parseInt(spinnerAdult.getSelectedItem().toString()) * 300) + (Integer.parseInt(spinnerchild.getSelectedItem().toString()) * 100) + (Integer.parseInt(edtNumBags.getText().toString())*20.5);
+
+                @SuppressLint("WrongConstant") SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("UserProfileSP",MODE_APPEND);
+
+                flightEntity.setUserId(sharedPref.getString("userId",""));
+                flightEntity.setFrom(edtTextFrom.getText().toString());
+                flightEntity.setTo(edtTextTo.getText().toString());
+                flightEntity.setPrice(price);
+                bundle.putDouble("price", price);
+                FlightDatabase flightDatabase = FlightDatabase.getFlightDatabase(getApplicationContext());
+                FlightDao flightDao = flightDatabase.flightDao();
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        flightDao.bookFlight(flightEntity);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(getApplicationContext(), "Flight data stored!", Toast.LENGTH_SHORT).show();
+
+                            }
+
+                        });
+                    }
+
+                }).start();
+
+                Intent intent = new Intent(flight_booking.this, Ticket_QR.class);
+
+                intent.putExtras(bundle);
+
+                startActivity(intent);
+
             }
-
-            Bundle bundle = new Bundle();
-            bundle.putString("from",edtTextFrom.getText().toString());
-            bundle.putString("to",edtTextTo.getText().toString());
-            bundle.putString("bags",edtNumBags.getText().toString());
-            bundle.putString("adults",spinnerAdult.getSelectedItem().toString());
-            bundle.putString("children",spinnerchild.getSelectedItem().toString());
-
-            Intent intent = new Intent(flight_booking.this,Ticket_QR.class);
-
-            intent.putExtras(bundle);
-
-            startActivity(intent);
-
-
         });
 
         date = (EditText) findViewById(R.id.datePickerDept);
@@ -86,4 +128,6 @@ public class flight_booking extends AppCompatActivity {
 
     public void confirmOnClick(View view) {
     }
+
+
 }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -50,6 +51,11 @@ public class LoginActivity extends AppCompatActivity {
                             }
                         });
                     }else {
+                        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("UserProfileSP",MODE_PRIVATE);
+                        SharedPreferences.Editor myEditor = sharedPreferences.edit();
+                        myEditor.putString("userId", userEntity.getUserId());
+                        myEditor.putString("name", userEntity.getName());
+                        myEditor.commit();
                      String name = userEntity.getName();
                      startActivity(new Intent(LoginActivity.this,MainActivity.class).putExtra("name",name));
                     }
