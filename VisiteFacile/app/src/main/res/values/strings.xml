@@ -60,7 +60,7 @@
     <string name="submitRating">Submit Your Rating</string>
     <string name="thankyou">We Appreciate Your Feedback</string>
     <string name="appinfo">Your Guide To Tour Easy!</string>
-    <string name="newTxtTitle">All Destinations</string>
+    <string name="ratingTitle">Enjoying Our App?</string>
     <string-array name="adult_spinner">
         <item>1</item>
         <item>2</item>
