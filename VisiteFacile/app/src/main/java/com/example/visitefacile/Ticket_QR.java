@@ -34,6 +34,9 @@ public class Ticket_QR extends AppCompatActivity {
         qrCodeIV = findViewById(R.id.idIVQrcode);
         dataEdt = findViewById(R.id.idEdt);
         generateQrBtn = findViewById(R.id.idBtnGenerateQR);
+        Bundle bundle = getIntent().getExtras();
+
+        
 
         // initializing onclick listener for button.
         generateQrBtn.setOnClickListener(new View.OnClickListener() {
