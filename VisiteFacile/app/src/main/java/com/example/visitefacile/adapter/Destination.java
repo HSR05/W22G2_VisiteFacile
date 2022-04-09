@@ -31,11 +31,23 @@ public class Destination {
     @ColumnInfo(name = "destinationprice")
     private double DestinationPrice;
 
+    @ColumnInfo(name = "destinationabout")
+    private String DestinationAbout;
+
+    public String getDestinationAbout() {
+        return DestinationAbout;
+    }
+
+    public void setDestinationAbout(String destinationAbout) {
+        DestinationAbout = destinationAbout;
+    }
+
+
     public Destination(){
 
     }
 
-    public Destination(@NonNull String destinationName, String destinationCountryName, int destinationPic, String travelDate, double destinationTicketPrice, boolean destinationStatus) {
+    public Destination(@NonNull String destinationName, String destinationCountryName, int destinationPic, String travelDate, double destinationTicketPrice, boolean destinationStatus,String destinationAbout) {
         DestinationName = destinationName;
         DestinationCountryName = destinationCountryName;
         DestinationPic = destinationPic;
@@ -44,6 +56,7 @@ public class Destination {
         DestinationStatus = destinationStatus;
         double destinationPrice = 0;
         DestinationPrice = destinationPrice;
+        DestinationAbout = destinationAbout;
     }
 
     @NonNull

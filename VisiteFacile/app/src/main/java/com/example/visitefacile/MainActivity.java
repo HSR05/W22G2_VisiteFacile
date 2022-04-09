@@ -197,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 //Creating the object here
-                Destination eachDestination = new Destination(eachDestinationLine[0],eachDestinationLine[1],destinationDrawable,eachDestinationLine[3], destPrice,topDestStatus);
+                Destination eachDestination = new Destination(eachDestinationLine[0],eachDestinationLine[1],destinationDrawable,eachDestinationLine[3], destPrice,topDestStatus,eachDestinationLine[7]);
 
                 DestinationList.add(eachDestination);
             }
