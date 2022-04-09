@@ -50,7 +50,9 @@ public class TopPlacesAdapter extends RecyclerView.Adapter<TopPlacesAdapter.TopP
                 Bundle myBundle = new Bundle();
 
 
-                context.startActivity(i.putExtra("DBINDEX", topPlacesDataList.get(holder.getAdapterPosition()).getDestinationName()));
+                context.startActivity(i.putExtra("DBINDEX", topPlacesDataList
+                                                                        .get(holder.getAdapterPosition())
+                                                                .getDestinationName()));
             }
         });
     }
