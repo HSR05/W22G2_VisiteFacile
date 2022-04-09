@@ -11,6 +11,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.zxing.WriterException;
@@ -20,7 +21,7 @@ import androidmads.library.qrgenearator.QRGEncoder;
 public class Ticket_QR extends AppCompatActivity {
 
     private ImageView qrCodeIV;
-    private EditText dataEdt;
+    private TextView dataEdt;
     private Button generateQrBtn;
     Bitmap bitmap;
     QRGEncoder qrgEncoder;
@@ -36,20 +37,18 @@ public class Ticket_QR extends AppCompatActivity {
         generateQrBtn = findViewById(R.id.idBtnGenerateQR);
         Bundle bundle = getIntent().getExtras();
 
+        dataEdt.setText("    Click below to generate the QR code for your flight");
         
 
         // initializing onclick listener for button.
         generateQrBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (TextUtils.isEmpty(dataEdt.getText().toString())) {
 
-                    // if the edittext inputs are empty then execute
-                    // this method showing a toast message.
-                    Toast.makeText(Ticket_QR.this, "Enter some text to generate QR Code", Toast.LENGTH_SHORT).show();
-                } else {
+
                     // below line is for getting
                     // the windowmanager service.
+                   // dataEdt.setText("Generate QR code for flight from: " + bundle.getString("from") + " to : " + bundle.getString("to") + " for price of - " + bundle.getDouble("price"));
                     WindowManager manager = (WindowManager) getSystemService(WINDOW_SERVICE);
 
                     // initializing a variable for default display.
@@ -71,7 +70,8 @@ public class Ticket_QR extends AppCompatActivity {
 
                     // setting this dimensions inside our qr code
                     // encoder to generate our qr code.
-                    qrgEncoder = new QRGEncoder(dataEdt.getText().toString(), null, QRGContents.Type.TEXT, dimen);
+
+                    qrgEncoder = new QRGEncoder(bundle.getString("from") + bundle.getDouble("price") + "", null, QRGContents.Type.TEXT, dimen);
                     try {
                         // getting our qrcode in the form of bitmap.
                         bitmap = qrgEncoder.encodeAsBitmap();
@@ -83,8 +83,9 @@ public class Ticket_QR extends AppCompatActivity {
                         // exception handling.
                         Log.e("Tag", e.toString());
                     }
+
                 }
-            }
+
         });
     }
 }
