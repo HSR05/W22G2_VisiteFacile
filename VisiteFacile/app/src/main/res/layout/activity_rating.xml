@@ -8,21 +8,36 @@
     tools:context=".RatingActivity">
 
 
+    <TextView
+        android:id="@+id/textViewRatingTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:background="#B2FFFFFF"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/ratingTitle"
+        android:textColor="#0288D1"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
     <RatingBar
         android:id="@+id/appRatingBar"
         android:layout_width="258dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:background="#8D1B4150"
         android:contentDescription="@string/ratingdescription"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:rating="2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toBottomOf="@+id/textViewRatingTitle" />
 
     <Button
         android:id="@+id/submitButton"
