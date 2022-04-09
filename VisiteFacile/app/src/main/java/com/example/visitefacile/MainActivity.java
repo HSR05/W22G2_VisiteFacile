@@ -71,14 +71,14 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Clicked on Home", Toast.LENGTH_SHORT).show();
                         break;
 
-                    case R.id.user:
+                    case R.id.favorite:
                         //user
                         Toast.makeText(MainActivity.this, "Clicked on Favorites", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(MainActivity.this,FavActivity.class));
                         break;
 
                     case R.id.rating:
-                        //raing
+                        //rating
                         Toast.makeText(MainActivity.this, "Clicked on Rating", Toast.LENGTH_SHORT).show();
                        startActivity(new Intent(MainActivity.this,RatingActivity.class));
                         break;

@@ -3,6 +3,7 @@ package com.example.visitefacile;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
@@ -43,6 +44,18 @@ public class flight_booking extends AppCompatActivity {
                 Toast.makeText(this, "Kindly fill departing place", Toast.LENGTH_SHORT).show();
             }
 
+            Bundle bundle = new Bundle();
+            bundle.putString("from",edtTextFrom.getText().toString());
+            bundle.putString("to",edtTextTo.getText().toString());
+            bundle.putString("bags",edtNumBags.getText().toString());
+            bundle.putString("adults",spinnerAdult.getSelectedItem().toString());
+            bundle.putString("children",spinnerchild.getSelectedItem().toString());
+
+            Intent intent = new Intent(flight_booking.this,Ticket_QR.class);
+
+            intent.putExtras(bundle);
+
+            startActivity(intent);
 
 
         });

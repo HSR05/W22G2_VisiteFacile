@@ -53,7 +53,7 @@ public class RatingActivity extends AppCompatActivity {
                         startActivity(new Intent(RatingActivity.this,MainActivity.class));
                         break;
 
-                    case R.id.user:
+                    case R.id.favorite:
                         //user
                         Toast.makeText(RatingActivity.this, "Clicked on Favorites", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(RatingActivity.this,FavActivity.class));

@@ -21,7 +21,7 @@ import com.google.android.material.navigation.NavigationBarView;
 public class TopCitiesActivity extends AppCompatActivity
 {
     String city;
-
+//testing push
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -95,7 +95,7 @@ public class TopCitiesActivity extends AppCompatActivity
                         startActivity(new Intent(TopCitiesActivity.this,MainActivity.class));
                         break;
 
-                    case R.id.user:
+                    case R.id.favorite:
                         //user
                         Toast.makeText(TopCitiesActivity.this, "Clicked on Favorites", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(TopCitiesActivity.this,FavActivity.class));
@@ -110,18 +110,18 @@ public class TopCitiesActivity extends AppCompatActivity
             }
         });
 
-        /*
+
         btnViewMaps.setOnClickListener((View view)->
         {
-           // Intent mapact = new Intent(TopCitiesActivity.this,MapsActivity.class);
-            //Bundle b = new Bundle();
-           // b.putString("city",city.toString());
-           // mapact.putExtras(b);
-           // startActivity(mapact);
+           Intent mapact = new Intent(TopCitiesActivity.this,MapsActivity.class);
+           Bundle b = new Bundle();
+           b.putString("city",city.toString());
+           mapact.putExtras(b);
+           startActivity(mapact);
 
 
         });
-        */
+
 
 
 
