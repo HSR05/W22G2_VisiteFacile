@@ -51,12 +51,12 @@ public class MainActivity extends AppCompatActivity {
 
         TextView MySeeAll = findViewById(R.id.textViewSeeAll);
 
-//        MySeeAll.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(MainActivity.this, SeeAllActivity.class));
-//            }
-//        });
+        MySeeAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SeeAllActivity.class));
+            }
+        });
 
 
         BottomNavigationView bottomNavigationView =(BottomNavigationView) findViewById(R.id.bottomNavView_Bar);

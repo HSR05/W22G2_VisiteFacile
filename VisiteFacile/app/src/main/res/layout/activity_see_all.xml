@@ -10,44 +10,19 @@
      those records from the database for which number of tickets > 0 in
      the recycler view using external layout. RecyclerView can use Linear Layout Manager
      or single column GridLayout Manager) -->
-    <TextView
-        android:id="@+id/txtViewDesc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.07999998" />
 
     <ListView
         android:id="@+id/listViewItems"
         android:layout_width="match_parent"
         android:layout_height="600dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        tools:ignore="MissingConstraints" />
-    <GridView
-        android:id="@+id/gridViewTravel"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" /><![CDATA[
+
     app:layout_constraintTop_toBottomOf="@+id/txtViewDesc" />
 
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="250dp"
-        android:layout_height="200dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_dynamic"
-        app:srcCompat="@drawable/india"
-        tools:ignore="UnknownId" />
+
+]]>
 </androidx.constraintlayout.widget.ConstraintLayout>
