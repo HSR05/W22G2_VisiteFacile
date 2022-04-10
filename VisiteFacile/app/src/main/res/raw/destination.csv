@@ -1,10 +1,10 @@
 DestinationName,DestinationCountryName,DestinationPic,TravelDate,DestinationTicketPrice,DestinationStatus,DestinationPrice
-Taj Mahal,India,india,12-16-2022,1650.99,no,4000
-Alimatha Island,Maldives,maldives,12-18-2022,720.99,no,3000
-Paris,France,paris,12-31-2022,1550.99,yes,4500
-Rincón de la Vieja,Costa Rica,costarica,12-20-2022,840.99,yes,2900
-Sugar Loaf,Brazil,brazil,12-26-2022,1120.99,no,2100
-Stanley Park,Canada,stanleypark,12-31-2022,1050.99,yes,3100
-Amsterdam,Netherlands,amsterdam,12-31-2022,1650.99,no,2100
-Tokyo,Japan,tokyo,12-31-2022,1250.99,yes,2600
-Dubai,UAE,dubai,12-31-2022,1350.99,yes,3500
+Taj Mahal,India,india,12-16-2022,1650.99,no,4000,Taj Mahal also spelled Tadj Mahall mausoleum complex in Agra western Uttar Pradesh state northern India. The Taj Mahal was built by the Mughal emperor Shah Jahān (reigned 1628–58) to immortalize his wife Mumtaz Mahal (“Chosen One of the Palace”) who died in childbirth in 1631 having been the emperor’s inseparable companion since their marriage in 1612.
+Alimatha Island,Maldives,maldives,12-18-2022,720.99,no,3000,The word Alimathà originally meant “woman’s face”. The island seen from above today has a shape that reminds of a heart and has a beach of fine white sand that goes soaking into the sea of the Maldives. It is surrounded by a beautiful and colorful coral reef inhabited by hundreds of species of fish.
+Paris,France,paris,12-31-2022,1550.99,yes,4500,Paris city and capital of France situated in the north-central part of the country. People were living on the site of the present-day city located along the Seine River some 233 miles (375 km) upstream from the river’s mouth on the English Channel (La Manche) by about 7600 BCE. The modern city has spread from the island (the Île de la Cité) and far beyond both banks of the Seine.
+Rincón de la Vieja,Costa Rica,costarica,12-20-2022,840.99,yes,2900,Ecological diversity abounds at Rincón de la Vieja National Park one of the parks in the Guanacaste Conservation Area.This park is a must-visit destination when you are in the Guanacaste Province.
+Sugar Loaf,Brazil,brazil,12-26-2022,1120.99,no,2100,A sugarloaf was the usual form in which refined sugar was produced and sold until the late 19th century when granulated and cube sugars were introduced.
+Stanley Park,Canada,stanleypark,12-31-2022,1050.99,yes,3100,Stanley Park is a magnificent green oasis in the midst of the urban landscape of Vancouver.
+Amsterdam,Netherlands,amsterdam,12-31-2022,1650.99,no,2100,Visit the world-famous 17th century capital of Holland. Enjoy the historic buildings beautiful museums and pleasant ambiance.
+Tokyo,Japan,tokyo,12-31-2022,1250.99,yes,2600,Tokyo formerly (until 1868) Edo city and capital of Tokyo to (metropolis) and of Japan. It is located at the head of Tokyo Bay on the Pacific coast of central Honshu. It is the focus of the vast metropolitan area often called Greater Tokyo the largest urban and industrial agglomeration in Japan.
+Dubai,UAE,dubai,12-31-2022,1350.99,yes,3500,Once a small fishing village in the Arabian Gulf Dubai is today one of the most cosmopolitan cities in the world. One of the seven emirates that make up the United Arab Emirates the city is home to more than 200 nationalities and offers an unforgettable experience to all visitors.

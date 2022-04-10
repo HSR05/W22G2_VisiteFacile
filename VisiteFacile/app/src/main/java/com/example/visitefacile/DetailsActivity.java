@@ -34,6 +34,7 @@ public class DetailsActivity extends AppCompatActivity {
         TextView myPrice = findViewById(R.id.txtViewPrice);
         ImageView myBackImage = findViewById(R.id.imageView3);
         ImageView imageViewHeart = findViewById(R.id.imgViewFav);
+        TextView myAbout = findViewById(R.id.textView10);
 
 
 
@@ -78,6 +79,7 @@ public class DetailsActivity extends AppCompatActivity {
                 myDestImage.setImageResource(myDest.getDestinationPic());
                 myCityName.setText(myDest.getDestinationName());
                 myPrice.setText(Double.toString(myDest.getDestinationTicketPrice()));
+                myAbout.setText(myDest.getDestinationAbout());
             }
         });
 
