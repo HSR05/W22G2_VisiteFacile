@@ -88,6 +88,8 @@ public class Ticket_QR extends AppCompatActivity {
 
                         MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, bundle.getString("from") , "qrCode");
 
+                        Toast.makeText(getApplicationContext(), "QR code has been stored to gallery for easy usage", Toast.LENGTH_SHORT).show();
+
 //                        String savePath = Environment.getExternalStorageDirectory().getPath() + "/QRCode/";
 //
 //                        QRGSaver qrgSaver = new QRGSaver();
