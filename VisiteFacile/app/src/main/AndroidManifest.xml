@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.visitefacile">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the "MyLocation" functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -17,10 +16,12 @@
         android:roundIcon="@mipmap/ic_launcher_appicon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.VisiteFacile">
-
+        <activity
+            android:name=".Login_or_Register"
+            android:exported="false" />
         <activity
             android:name=".RatingActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -29,11 +30,9 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
 
         <activity
             android:name=".MapsActivity"
@@ -43,13 +42,9 @@
             android:name=".PopActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.customTheme" />
-
-
-
-          <activity
+        <activity
             android:name=".Ticket_QR"
             android:exported="false" />
-
         <activity
             android:name=".TopCitiesActivity"
             android:exported="false" />
@@ -73,8 +68,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".Splash_Screen"
             android:exported="true">

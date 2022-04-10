@@ -14,7 +14,7 @@ public class Splash_Screen extends AppCompatActivity {
 
     private static int Splash_timer = 6000;
 
-    ImageView backgroundImage;
+    ImageView backgroundImage, topImage;
     TextView txtViewMadeBy, txtViewTitle;
 
 
@@ -28,20 +28,24 @@ public class Splash_Screen extends AppCompatActivity {
         backgroundImage = findViewById(R.id.background_image);
         txtViewMadeBy = findViewById(R.id.txtViewMadeby);
         txtViewTitle = findViewById(R.id.txtViewTitle);
+        topImage = findViewById(R.id.imageView);
 
         sideAnim = AnimationUtils.loadAnimation(this,R.anim.side_anim);
         bottomUpAnim = AnimationUtils.loadAnimation(this,R.anim.bottomup_anim);
         fadeAnim = AnimationUtils.loadAnimation(this,R.anim.fade_in_anim);
 
-        backgroundImage.setAnimation(fadeAnim);
+
+
+        backgroundImage.setAnimation(bottomUpAnim);
         txtViewTitle.setAnimation(sideAnim);
         txtViewMadeBy.setAnimation(bottomUpAnim);
+        topImage.setAnimation(fadeAnim);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
 
-                Intent intent = new Intent(Splash_Screen.this, MainActivity.class);
+                Intent intent = new Intent(Splash_Screen.this, RegisterActivity.class);
                 startActivity(intent);
 
             }
