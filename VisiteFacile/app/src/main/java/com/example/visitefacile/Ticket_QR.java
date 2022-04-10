@@ -1,8 +1,12 @@
 package com.example.visitefacile;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Display;
@@ -14,9 +18,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import com.google.zxing.WriterException;
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
+import androidmads.library.qrgenearator.QRGSaver;
 
 public class Ticket_QR extends AppCompatActivity {
 
@@ -78,13 +85,45 @@ public class Ticket_QR extends AppCompatActivity {
                         // the bitmap is set inside our image
                         // view using .setimagebitmap method.
                         qrCodeIV.setImageBitmap(bitmap);
+
+                        MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, bundle.getString("from") , "qrCode");
+
+//                        String savePath = Environment.getExternalStorageDirectory().getPath() + "/QRCode/";
+//
+//                        QRGSaver qrgSaver = new QRGSaver();
+//                        try {
+//
+//                            boolean save = qrgSaver.save(savePath, bundle.getString("from"), bitmap, QRGContents.ImageType.IMAGE_JPEG);
+//                            String result = save ? "Image Saved" : "Image Not Saved";
+//                        } catch (WriterException e) {
+//                            e.printStackTrace();
+//                        }
+////                        if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+////                            try {
+////                                boolean save = new QRGSaver().save(savePath, edtValue.getText().toString().trim(), bitmap, QRGContents.ImageType.IMAGE_JPEG);
+////                                String result = save ? "Image Saved" : "Image Not Saved";
+////
+////                            } catch (Exception e) {
+////                                e.printStackTrace();
+////                            }
+////                        } else {
+////                            ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
+////                        }
                     } catch (WriterException e) {
                         // this method is called for
                         // exception handling.
                         Log.e("Tag", e.toString());
                     }
 
-                }
+//                String savePath = Environment.getExternalStorageDirectory().getPath() + "/QRCode/";
+//                QRGSaver qrgSaver = new QRGSaver();
+//                try {
+//                    qrgSaver.save(savePath, bundle.getString("from") + bundle.getDouble("price"), bitmap, QRGContents.ImageType.IMAGE_JPEG);
+//                } catch (WriterException e) {
+//                    e.printStackTrace();
+//                }
+
+            }
 
         });
     }
